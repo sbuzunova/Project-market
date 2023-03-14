@@ -1,0 +1,20 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'order/backet.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <h1>Корзина</h1>
+    {% for product in products %}
+    <div class="bucket">
+        <img class="photo" src="{{product.image}}" alt="">
+        <h2 class="info">{{product.name}}</h2>
+        <h2 class="info">{{product.price}} грн</h2>
+        <h2 class="info">{{product.size}}</h2>
+        <a href="/delete_product/{{product.id}}"><img class="delete" src="{% static 'order/delete.png' %}" alt=""></a>
+    </div>
+    {% endfor %}
+    <a class="send_order" href="/createorder/">Замовити</a>
+</main>
+{% endblock %}

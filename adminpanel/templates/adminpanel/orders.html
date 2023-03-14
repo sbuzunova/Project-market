@@ -1,0 +1,40 @@
+{% extends "adminpanel/base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'adminpanel/css/products.css' %}">
+<link rel="stylesheet" href="{% static 'adminpanel/css/orders.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <div class="pogo">
+        <h2>Замовлення</h2>
+        {% for order in order_list %}
+        <div class="gogo">
+            <p class="roro">{{order.order.id}}</p>
+            <p>{{order.status}}</p>
+            <a class="button-a" href="/orders/{{order.order.id}}">Переглянути</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% if current_products %}
+    <form class="form-order" method="POST" action="" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <p>Номер телефону: {{current_order.phone_number}}</p>
+        <p>Ім'я та прізрище: {{current_order.full_name}}</p>
+        <p>Номер нової пошти: {{current_order.post_number}}</p>
+        <p>Місто: {{current_order.city}}</p>
+        {% for product in current_products %}
+        <a target="_blank" class="link-product" href="/product/{{product.id}}">{{product.name}}</a>
+        {% endfor %}
+        <select name="status" id="">
+            <option value="0">Чекає на оплату</option>
+            <option value="1">Готуємо до відправки</option>
+            <option value="2">Відправлено</option>
+            <option value="3">На пошті</option>
+            <option value="4">Доставлено</option>
+        </select>
+        <button class="save-order">Зберегти</button>
+    </form>
+    {% endif %}
+</main>
+{% endblock %}

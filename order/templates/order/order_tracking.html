@@ -1,0 +1,75 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'order/order_tracking.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <h1>Замовлення №{{order.id}}</h1>
+    <div class="tracking-div">
+        <div class="tracking-block">
+            <div class="circle ready">
+
+            </div>
+            <p class="p-div">Чекає на оплату</p>
+        </div>
+        <div class="tracking-block">
+            {% if order.status > 0 %}
+            <div class="circle ready">
+            {% else %}
+            <div class="circle notready">
+            {% endif %}
+            </div>
+            <p class="p-div">Готуємо до відправки</p>
+        </div>
+        <div class="tracking-block">
+            {% if order.status > 1 %}
+            <div class="circle ready">
+            {% else %}
+            <div class="circle notready">
+            {% endif %}
+
+            </div>
+            <p class="p-div">Відправлено</p>
+        </div>
+        <div class="tracking-block">
+            {% if order.status > 2 %}
+            <div class="circle ready">
+            {% else %}
+            <div class="circle notready">
+            {% endif %}
+
+            </div>
+            <p class="p-div">На пошті</p>
+        </div>
+        <div class="tracking-block">
+            {% if order.status > 3 %}
+            <div class="circle ready">
+            {% else %}
+            <div class="circle notready">
+            {% endif %}
+
+            </div>
+            <p class="p-div">Доставлено</p>
+        </div>
+    </div>
+    <div class="about-order">
+        <div class="order-products">
+            {% for product in products %}
+            <div class="order-product">
+                <img class="image-div" src="{{product.image}}" alt="">
+                <a target="_blank" class="product-name" href="/product/{{product.id}}">{{product.name}}</a>
+                <p class="product-price">{{product.price}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="order-info">
+            <h2>Інформація про доставку</h2>
+            <p class="post-number">Нова пошта №{{order.post_number}}</p>
+            <p class="city">Місто: {{order.city}}</p>
+            <p class="phone-number">Номер телефону: {{order.phone_number}}</p>
+            <p class="full-name">Ім'я та прізвище: {{order.full_name}}</p>
+        </div>
+    </div>
+</main>
+{% endblock %}

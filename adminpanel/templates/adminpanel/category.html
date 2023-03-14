@@ -1,0 +1,24 @@
+{% extends "adminpanel/base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'adminpanel/css/products.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <div class="pogo">
+        <h2>Категорії</h2>
+        {% for product_type in product_types %}
+        <div class="gogo">
+            <p>{{product_type.name}}</p>
+            <button>Переглянути</button>
+        </div>
+        {% endfor %}
+    </div>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <h2>Створити категорію</h2>
+        <input type="text" placeholder="Назва" name="title">
+        <button>Створити</button>
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'products/base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href="{% static 'order/my_orders.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <h1>Мої замовлення</h1>
+    {% for order in list_orders %}
+    <div class="order-div">
+        <a href="/ordertracking/{{order.order.id}}" class="number-order">{{order.order.id}}</a>
+        <p class="price-order">{{order.full_price}} грн</p>
+        <p class="status-order">{{order.status}}</p>
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}

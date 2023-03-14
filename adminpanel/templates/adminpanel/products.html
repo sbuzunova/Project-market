@@ -1,0 +1,36 @@
+{% extends "adminpanel/base.html" %}
+{% load static %}
+{% block link %}
+<link rel="stylesheet" href="{% static 'adminpanel/css/products.css' %}">
+{% endblock %}
+{% block content %}
+<main>
+    <div class="pogo">
+        <h2>Продукти</h2>
+        {% for product in products %}
+        <div class="gogo">
+            <p>{{product.name}}</p>
+            <button>Переглянути</button>
+        </div>
+        {% endfor %}
+    </div>
+    <form method="POST" action="" enctype='multipart/form-data'>
+        {% csrf_token %}
+        <h2>Створити продукт</h2>
+        <input type="text" placeholder="Назва" name="title">
+        <input type="text" placeholder="Опис" name="description">
+        <input type="text" placeholder="Ціна" name="price">
+        <input class="custom-file-input" type="file" placeholder="Картинка" name="image">
+        <select name="category" id="">
+            <option disabled selected value="">Категорія</option>
+            {% for product_type in product_types %}
+            <option value="{{product_type.id}}">{{product_type.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="text" placeholder="Розмір" name="size">
+        <input type="text" placeholder="Виробник" name="maker">
+        <input type="text" placeholder="Матеріал" name="material">
+        <button>Створити</button>
+    </form>
+</main>
+{% endblock %}

@@ -1,0 +1,35 @@
+main{
+    padding-top: 150px;
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.order-div{
+    background-color: #E6E6E6;
+    color: black;
+    width: 40%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 15px;
+    padding-left: 20px;
+}
+.number-order{
+    color: black;
+    width: 150px;
+    text-decoration: underline;
+}
+.price-order{
+    color: black;
+    font-size: 18px;
+    width: 150px;
+}
+.status-order{
+    color: black;
+    font-size: 18px;
+    width: 150px;
+}

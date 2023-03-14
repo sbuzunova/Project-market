@@ -1,0 +1,43 @@
+main{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    padding-top: 150px;
+    gap: 20px;
+}
+.bucket{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(180, 179, 179);
+    width: 90%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    gap: 30px;
+}
+.photo{
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
+.info{
+    font-size: 20px;
+    width: 20%;
+}
+.delete{
+    width: 25px;
+    height: 25px;
+}
+.send_order{
+    background-color: #ef9a89;
+    color: black;
+    border-radius: 15px;
+    width: 170px;
+    height: 30px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 20px;
+}

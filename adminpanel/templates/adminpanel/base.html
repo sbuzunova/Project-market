@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'adminpanel/css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script>
+        if ( window.history.replaceState ) {
+           window.history.replaceState( null, null, window.location.href );
+       }
+    </script>
+    {% block link %}
+    {% endblock %}
+</head>
+<body>
+    {% block menu %}
+    <header>
+        <a href="/main/"><img class="logo" src="{% static 'adminpanel/img/logo.png' %}" alt=""></a>
+        {% if current_page == 1 %}
+        <a class="current_page" href="/products/">Продукти</a>
+        {% else %}
+        <a href="/products/">Продукти</a>
+        {% endif %}
+        {% if current_page == 2 %}
+        <a class="current_page" href="/orders/">Замовлення</a>
+        {% else %}
+        <a href="/orders/">Замовлення</a>
+        {% endif %}
+        {% if current_page == 3 %}
+        <a class="current_page" href="/category/">Категорії</a>
+        {% else %}
+        <a href="/category/">Категорії</a>
+        {% endif %}
+    </header>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

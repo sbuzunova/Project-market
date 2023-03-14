@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main/reg.css' %}">
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Реєстрація</h1>
+        <input type="text" placeholder="Ім'я" name="firstname" maxlength="10">
+        <input type="text" placeholder="Прізвище" name="lastname" maxlength="15">
+        <input type="text" placeholder="Логін" name="username" minlength="5">
+        <input type="email" placeholder="Електронна пошта" name="email">
+        <input type="password" placeholder="Пароль" name="password">
+        <input type="password" placeholder="Підтвердження паролю" name="sucpassword">
+        <p class="error">{{error}}</p>
+        <button>Зареєструватися</button>
+    </form>
+</body>
+</html>

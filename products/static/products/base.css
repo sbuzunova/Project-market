@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito Sans";
+}
+header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 91px;
+    width: 100%;
+    height: 100px;
+    background: #08348d;
+    position: fixed;
+}
+input{
+    width: 360px;
+    height: 39px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+}
+input::placeholder{
+    font-family: "Nunito Sans";
+}
+button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 129px;
+    height: 43px;
+    background: #c9b3e8;
+    border-radius: 15px;
+    border: none;
+    font-size: 18px; 
+}
+form{
+    display: flex;
+    gap: 10px;
+}
+div{
+    display: flex;
+    gap: 10px;
+}
+.log_in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 129px;
+    height: 43px;   
+    background: #dca572;
+    border-radius: 15px;
+    font-size: 18px;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+.sing_in{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 129px;
+    height: 43px;   
+    background: #c9b3e8;
+    border-radius: 15px;
+    font-size: 18px;
+    color: black;
+}
+.white{
+    color: #FFFFFF !important;
+    font-size: 18px;
+}
+.user{
+    width: 30px;
+    height: 30px;
+}
+header div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart{
+    width: 30px;
+    height: 30px;
+}
