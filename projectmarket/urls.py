@@ -23,13 +23,10 @@ from main.views import *
 from order.views import *
 urlpatterns = [
     path('', redirect_to_main),
-    path('admin/', admin.site.urls),
-    path('base/', base),
     path('products/', products),
     path('category/', category),
     path('orders/', orders),
     path('orders/<int:id>/', orders),
-    path('base1/', base1),
     path('main/', main, name="main"),
     path('reg/', reg),
     path('auth/', auth, name="auth"),
